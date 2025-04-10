@@ -9,7 +9,8 @@ import { buttonVariants } from "../ui/button";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
 export default function AuthBtn() {
-  const { user, isLoading } = useKindeBrowserClient();
+  const { getUser, isLoading } = useKindeBrowserClient();
+  const user = getUser();
 
   if (isLoading) {
     return null
